@@ -35,24 +35,3 @@ class, where we do our depth first iterative deepening stopping when we reach a 
 We use several functions from the PlanningProblem class, like is goal_reached, which checks to see if we have reached all of the
 conditions necessary to stop the tree building. As well as apply_action which applies some of the actions to our list of actions 
 in order to build the tree and move closer to our complete state.
-
------------------------------------------------------------------------------------------
-
-Output:
-
-The output that I got from implementing my driver class was a success for the backwards iteration of dfid, but a failure for the
-forward dfid. I reached the 
-"if forward_plan is not None:
-        print("Forward Plan found:")
-        for step in forward_plan:
-            print(step)
-        print("\n")
-    else:
-        print("No forward plan found within the specified maximum depth.") "
-
-part of the python code and I got "No forward plan found within the specified maximum depth.", which was disapointing.
-I tried running through it multiple times with the debugger and it didn't work with a very large depth, it kept running without 
-stopping, to the point where my laptop starting making concerning sounds. If I had to guess why this was, it would probably have 
-to do with the apply_action function in planning_problem.py. When I ran through it in the debugger the actions weren't updating, 
-which is weird because I did reach the goal state in the backwards iteration. I'm not really sure why this is and I'll have to 
-investigate further.
