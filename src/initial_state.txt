@@ -1,0 +1,5 @@
+on(Block1, Block2)
+clear(Block1)
+at_truck(Truck1, CityA)
+in_truck(Obj1, Truck1)
+clear(Table)

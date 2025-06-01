@@ -1,0 +1,2 @@
+on(Block1, Table)
+at_location(Obj1, CityB)

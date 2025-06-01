@@ -1,0 +1,58 @@
+Representation Description:
+
+The problem states for this project are represented using a series of logical predicates within a logical framework. 
+Each state is defined by a set of predicates that describe the relationships and attributes of objects in the environment.
+
+Predicates used in this representation include:
+
+on(Block, Surface): Indicates that Block is on top of Surface.
+clear(Block): Indicates that Block has no other block on top of it.
+at_truck(Truck, Location): Indicates that Truck is located at Location.
+in_truck(Object, Truck): Indicates that Object is inside Truck.
+clear(Table): Indicates that Table has no objects on top of it.
+
+The goal state is similarly represented using predicates that define the desired configuration of objects and their relationships:
+
+on(Block1, Table): Indicates that Block1 should be on top of Table.
+at_location(Obj1, CityB): Indicates that Obj1 should be located at CityB.
+
+The representation captures the current and desired states of the environment using logical predicates, 
+enabling the implementation of algorithms like depth-first iterative deepening search (DFID) to explore possible plans and 
+actions to achieve the goal state. This representation also facilitates the definition of operators and actions that manipulate 
+the state based on predefined rules and conditions, allowing for systematic search and planning within the logical framework.
+
+
+-------------------------------------------------------------------------------------
+
+Project Description:
+
+The output is from the class hw4_driver.py and if you run it in any Python editor you should get similar results.
+action.py contains a class Action that is used to hold the actions from the yaml file containing: a name, preconditions, and
+effects. planning_problem.py contains a class abstraction that contains an initial state and goals that we want to generate based
+off our actions. dfid.py contains two classes BackwardsDFID and ForwardsDFID that is similar to the example that you gave us in
+class, where we do our depth first iterative deepening stopping when we reach a certain depth.
+
+We use several functions from the PlanningProblem class, like is goal_reached, which checks to see if we have reached all of the
+conditions necessary to stop the tree building. As well as apply_action which applies some of the actions to our list of actions 
+in order to build the tree and move closer to our complete state.
+
+-----------------------------------------------------------------------------------------
+
+Output:
+
+The output that I got from implementing my driver class was a success for the backwards iteration of dfid, but a failure for the
+forward dfid. I reached the 
+"if forward_plan is not None:
+        print("Forward Plan found:")
+        for step in forward_plan:
+            print(step)
+        print("\n")
+    else:
+        print("No forward plan found within the specified maximum depth.") "
+
+part of the python code and I got "No forward plan found within the specified maximum depth.", which was disapointing.
+I tried running through it multiple times with the debugger and it didn't work with a very large depth, it kept running without 
+stopping, to the point where my laptop starting making concerning sounds. If I had to guess why this was, it would probably have 
+to do with the apply_action function in planning_problem.py. When I ran through it in the debugger the actions weren't updating, 
+which is weird because I did reach the goal state in the backwards iteration. I'm not really sure why this is and I'll have to 
+investigate further.
