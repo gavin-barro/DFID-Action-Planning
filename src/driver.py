@@ -36,9 +36,9 @@ def read_predicates_from_file(filepath: str) -> list[str]:
 
 def main():
     # Define file paths
-    actions_file = "HW4/actions.yaml"
-    initial_state_file = "HW4/initial_state.txt"
-    goal_state_file = "HW4/goals.txt"
+    actions_file = "src/actions.yaml"
+    initial_state_file = "src/initial_state.txt"
+    goal_state_file = "src/goals.txt"
 
     # Read actions from YAML file
     actions = read_actions(actions_file)
